@@ -1,0 +1,42 @@
+#+TITLE: Variables et identifieurs
+#+AUTHOR: Laurent Garnier
+
+#+BEGIN_SRC sh
+irb
+user = "Nico"
+_unused = "Non utilisée"
+some_var = 1234
+self
+nil
+nil.class
+__FILE__
+__dir__
+$version = "1.2.6"
+$NOT_A_CONST = 42
+@foobar = "baz"
+@some_var_123 = 123
+class Demo
+@@counter = 10
+@@file_path = "/some/dir/file.txt"
+end
+STATUSES = ["draft", "published", "pinned"]
+API_URL = "http://something.com"
+class User
+MIN_AGE = 10
+MAX_AGE = 90
+@@count = 0
+def initialize(name)
+@name = name 
+@@count += 1
+end
+def self.instances_count 
+@@count 
+end
+end
+User.new("nico")
+User.new("martin")
+User.new("jon")
+User.instances_count
+#+END_SRC
+
+Pour aller plus loin consulter la [[https://docs.ruby-lang.org/en/2.4.0/syntax/assignment_rdoc.html][documentation]]

@@ -1,0 +1,43 @@
+#+TITLE: Les types primitifs 
+#+AUTHOR: Laurent Garnier
+
+* String
+
+  #+BEGIN_SRC sh
+  irb
+  2.times { puts "Hello" }
+  3.upto(5) { |i| puts i }
+  "hackademy".size
+  s = "hackademy"
+  s.class
+  s.succ
+  s = "hackademy\n"
+  s.chomp
+  s = "hackademy"
+  s.chomp
+  s.length
+  s.capitalize
+  s.upcase
+  #+END_SRC
+
+  Pour aller plus loin voir la documentation
+  [[https://ruby-doc.org/core-2.4.0/String.html]]
+
+
+* Numeric
+
+  #+BEGIN_SRC sh
+  irb
+  i = 20
+  i.class
+  i.kind_of?(Numeric)
+  i.succ
+  2 + 3
+  2.+(3)
+  3.5.class
+  3.5.kind_of?(Numeric)
+  #+END_SRC
+
+  Pour aller plus loin voir la documentation
+  [[https://ruby-doc.org/core-2.5.0/Numeric.html]]
+

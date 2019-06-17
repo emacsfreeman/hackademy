@@ -1,0 +1,46 @@
+#+TITLE: Les types primitifs Array et Hash
+#+AUTHOR: Laurent Garnier
+
+* Array
+
+  #+BEGIN_SRC sh
+  irb
+  a = [2, 5, 10]
+  a << 25
+  a.push(50)
+  a.unshift 1
+  a[2]
+  a.at(2)
+  a << nil << nil
+  a.compact!
+  a << [2, 5]
+  a.flatten!.uniq!
+  a << "foo"
+  a.index("foo")
+  a.shuffle
+  double_a = a.map { |v| v * 2 }
+  double_a - a
+  double_a | a
+  double_a & a
+  #+END_SRC
+
+  Pour aller plus loin voir la documentation
+  [[https://ruby-doc.org/core-2.4.1/Array.html]]
+
+  
+* Hash
+
+  #+BEGIN_SRC sh
+  irb
+  h = { a: 'a', b: 42, c: { d: 'f' } }
+  h[:a]
+  h["test"]
+  h.default = "foo"
+  h.key?(:b)
+  h2 = { a: 'foo', z: 'baz' }
+  h.merge! h2
+  #+END_SRC
+
+  Pour aller plus loin voir la documentation
+  [[https://ruby-doc.org/core-2.5.1/Hash.html]]
+

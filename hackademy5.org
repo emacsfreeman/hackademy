@@ -1,0 +1,37 @@
+#+TITLE: Créer une classe
+#+AUTHOR: Laurent Garnier
+
+* Le fichier Ruby =animal.rb= pour la classe Animal
+
+  #+BEGIN_SRC ruby
+    class Animal
+      WILD = true
+
+      @@counter = 0
+
+      def initialize(name, sex, age)
+	@@counter += 1
+	@name, @sex, @age
+      end
+
+      def description
+	puts "#{@name} is #{@age} years old."
+      end
+
+      def self.instances_count
+	puts "We created #{@@counter} animals."
+      end 
+    end
+  #+END_SRC
+* La console irb
+
+  #+BEGIN_SRC sh
+  irb
+  load 'animal.rb'
+  a1 = Animal.new('Simba', 'male', 5)
+  a2 = Animal.new('Cheetah', 'male', 20)
+  a1.description
+  a2.description
+  Animal.instances_count
+  Animal::WILD
+  #+END_SRC

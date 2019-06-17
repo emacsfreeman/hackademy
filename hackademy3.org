@@ -1,0 +1,44 @@
+#+TITLE: Les structures de contrôle
+#+AUTHOR: Laurent Garnier
+
+* if, else, elsif
+
+  #+BEGIN_SRC sh
+  irb
+  if 1 == 1
+  puts "OK"
+  end
+  if 1 > 2
+  puts "1 est plus grand que 2"
+  else 
+  puts "1 est plus petit que 2"
+  end
+  if false
+  puts "faux"
+  elsif true
+  puts "vrai"
+  else
+  puts "logique non classique"
+  end
+  if !false
+  puts "OK"
+  end
+  unless false
+  puts "OK"
+  end
+  puts "OK" if true
+  puts "OK" unless false
+  case "Ceci est une chaîne"
+  when "foo"
+  puts "Branche 1"
+  when 1..10 
+  puts "Branche 2"
+  when /une/
+  puts "Branche 3"
+  else
+  puts "Branche 4"
+  end
+  #+END_SRC
+
+  Pour aller plus loin voir la documentation
+  [[https://docs.ruby-lang.org/en/2.4.0/syntax/control_expressions_rdoc.html]]

@@ -49,7 +49,7 @@
 
   Valide mais pas dans l'esprit de Ruby
 
-* La nouvellle classe dans l'esprit de Ruby
+* La nouvelle classe dans l'esprit de Ruby
 
   #+BEGIN_SRC ruby
     class Animal

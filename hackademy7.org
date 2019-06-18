@@ -1,0 +1,78 @@
+#+TITLE: L'héritage
+#+AUTHOR: Laurent Garnier
+
+* La classe =Dog= qui hérite de la classe =Animal= 
+
+  #+BEGIN_SRC ruby
+    class Dog < Animal
+      WILD = false
+
+      def cry
+	puts "Woof!"
+      end
+    end
+  #+END_SRC
+
+* Evaluation dans =irb=
+
+  #+BEGIN_SRC sh
+    irb
+    load 'animal.rb'
+    load 'dog.rb'
+    d = Dog.new('Snoopy', 'male', 10)
+    d.age
+    d.description
+    d.cry
+    a = Animal.new('Simba', 'male', 5)
+    a.cry
+    Dog::WILD
+  #+END_SRC
+* Modification de la classe =Dog=
+
+  #+BEGIN_SRC ruby
+    class Dog < Animal
+      WILD = false
+
+      def cry
+	puts "Woof!"
+      end
+
+      def description
+	puts "I'm #{@name} the dog and I'm #{@age} years old!"
+      end
+    end
+  #+END_SRC
+* Evaluation dans =irb=
+
+  #+BEGIN_SRC sh
+    irb 
+    load 'animal.rb'
+    load 'dog.rb'
+    d = Dog.new('Snoopy', 'male', 10)
+    d.description
+  #+END_SRC
+* Modification de la classe =Dog= à l'aide du mot-clé =super=
+
+  #+BEGIN_SRC ruby
+    class Dog < Animal
+      WILD = false
+
+      def cry
+	puts "Woof!"
+      end
+
+      def description
+	super
+	puts "He's a dog"
+      end
+    end
+  #+END_SRC 
+* Evaluation dans =irb=
+
+  #+BEGIN_SRC sh
+    irb
+    load 'animal.rb'
+    load 'dog.rb'
+    d = Dog.new('Snoopy', 'male', 10)
+    d.description
+  #+END_SRC

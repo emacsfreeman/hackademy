@@ -1,0 +1,87 @@
+#+TITLE: Les accesseurs
+#+AUTHOR: Laurent Garnier
+
+* La classe à charger
+
+  #+BEGIN_SRC ruby
+    class Animal
+      WILD = true
+
+      @@counter = 0
+
+      def initialize(name, sex, age)
+	@@counter += 1
+	@name, @sex, @age = name, sex, age
+      end
+
+      # getter, goal: return the value of the variable @age
+      def age
+	@age
+      end
+
+      # setter, goal: allowing to change the content of the variable @age
+      def age=(age)
+	@age = age
+      end
+
+      def description
+	puts "#{@name} is #{@age} years old."
+      end
+
+      def self.instances_count
+	puts "We created #{@@counter} animals."
+      end
+    end
+  #+END_SRC
+
+* Evaluation dans =irb=
+
+  #+BEGIN_SRC sh
+    irb
+    load 'animal.rb'
+    a = Animal.new('Simba', 'male', 5)
+    a.age
+    a.description
+    a.age = 10
+    a.age
+    a.description
+  #+END_SRC
+
+  Valide mais pas dans l'esprit de Ruby
+
+* La nouvellle classe dans l'esprit de Ruby
+
+  #+BEGIN_SRC ruby
+    class Animal
+      WILD = true
+
+      @@counter = 0
+
+      attr_accessor :age
+
+      def initialize(name, sex, age)
+	@@counter += 1
+	@name, @sex, @age = name, sex, age
+      end
+
+      def description
+	puts "#{@name} is #{@age} years old."
+      end
+
+      def self.instances_count
+	puts "We created #{@@counter} animals."
+      end
+    end
+  #+END_SRC
+* Evaluation dans =irb=
+
+  #+BEGIN_SRC sh
+    irb
+    load 'animal.rb'
+    a = Animal.new('Simba', 'male', 5)
+    a.age
+    a.description
+    a.age = 10
+    a.age
+    a.description
+  #+END_SRC

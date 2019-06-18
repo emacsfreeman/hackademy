@@ -3,6 +3,8 @@ class Animal
 
   @@counter = 0
 
+  attr_accessor :age
+
   def initialize(name, sex, age)
     @@counter += 1
     @name, @sex, @age = name, sex, age

@@ -1,0 +1,34 @@
+#+TITLE: Les symboles
+#+AUTHOR: Laurent Garnier
+
+* Tests dans =irb=
+
+  #+BEGIN_SRC sh
+    irb
+    :foo.class
+    :foo.object_id
+    :foo.object_id
+    "foo".object_id
+    "foo".object_id
+    array = ["foo", :foo, "foo", :foo, :foo]
+    class Foo
+    attr_accessor :something
+    end
+    "foo".freeze.object_id
+    "foo".freeze.object_id
+    :foo.kind_of?(String)
+    :"identifieur peu commun!"
+    STATUSES = [:draft, :published, :pinned]
+    NORTH, SOUTH, EAST, WEST = :north, :south, :east, :west
+    :foo.to_s
+    "foo"
+    "foo".to_sym
+    def hello_dude(name)
+    puts "Hello #{name.to_s}!"
+    end
+    hello_dude("Nico")
+    hello_dude(:Nico)
+    array = ["one", "two", "three"]
+    array.map { |word| word.capitalize }
+    array.map(&:capitalize)
+  #+END_SRC

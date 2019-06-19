@@ -1,0 +1,46 @@
+#+TITLE: Les bases de la réflexion
+#+AUTHOR: Laurent Garnier
+
+* Tests dans =irb=
+  :PROPERTIES:
+  :ORDERED:  t
+  :END:
+
+  #+BEGIN_SRC sh
+    irb
+    if defined?(some_var)
+       puts "some_var = #{some_var}"
+       else
+	   puts "some_var n'existe pas"
+       end
+    s = "test"
+    s.respond_to? :size
+    true   
+    s.respond_to? :foo
+    s.class
+    123.class
+    Array.new.class
+    s.instance_of?(String)
+    s.instance_of?(Object)
+    s.kind_of?(String)
+    s.kind_of?(Object)
+    s.kind_of?(Array)
+    s.public_methods
+    s.protected_methods
+    s.private_methods
+    s.instance_variables
+    s.instance_variable_set :@foo, "test"
+    s.instance_variable_get :@foo
+    Array.ancestors
+    Array.included_modules
+    ObjectSpace.each { |o| p o }
+    ObjectSpace.count_objects
+    "test".foo
+    class String
+    def method_missing(name, *args, &block)
+    puts "La méthode #{name} n'existe pas"
+    end
+    end
+    :method_missing
+    "test".foo
+  #+END_SRC
